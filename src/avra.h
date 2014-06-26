@@ -38,13 +38,13 @@
 #  define VER_MINOR 3
 #endif
 #ifndef VER_RELEASE
-#  define VER_RELEASE 0
+#  define VER_RELEASE 1
 #endif
 #ifndef VER_BUILD
 #  define VER_BUILD 1
 #endif
 #ifndef VER_DATE
-#  define VER_DATE    "8 May 2010"
+#  define VER_DATE    "25 May 2014"
 #endif
 
 #define IS_HOR_SPACE(x)	((x == ' ') || (x == 9))
@@ -196,6 +196,7 @@ struct prog_info {
 	FILE *coff_file;
 	/* Warning additions */
 	int NoRegDef;
+	int NoPragma;
 	int pass;
 };
 

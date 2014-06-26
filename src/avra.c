@@ -95,7 +95,7 @@ static struct segment_info CODE_SEG;
 static struct segment_info DATA_SEG;
 static struct segment_info EEPROM_SEG;
 
-int main(int argc, char *argv[])
+int main(int argc, const char *argv[])
 {
   int show_usage = False;
   struct prog_info *pi;
@@ -355,6 +355,8 @@ init_prog_info(struct prog_info *pi, struct args *args) {
 	for(warnings = GET_ARG_LIST(args, ARG_WARNINGS); warnings; warnings = warnings->next) {
 		if(!nocase_strcmp(warnings->data, "NoRegDef"))
 			pi->NoRegDef = 1;
+        if(!nocase_strcmp(warnings->data, "NoPragma"))
+            pi->NoPragma = 1;
 	}
 	
 	pi->cseg = &CODE_SEG;
